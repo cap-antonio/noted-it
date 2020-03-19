@@ -1,6 +1,5 @@
 import React from 'react'
 import './header.css'
-import { FormattedMessage } from 'react-intl'
 
 const Header = () => {
     return (
