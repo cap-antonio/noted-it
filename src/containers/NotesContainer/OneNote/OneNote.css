@@ -1,0 +1,40 @@
+.card-body {
+    background-color: white;
+    text-align: center;
+}
+.card-body i {
+    padding: 2px
+}
+.basic-icon {
+    color: green;
+    cursor: pointer;
+}
+.green-icon {
+    color: #2eb82e !important;
+    cursor: pointer;
+}
+.red-icon {
+    color: #ff3333 !important;
+    cursor: pointer;
+}
+.grey-icon {
+    color: #cccccc !important;
+    cursor: pointer;
+}
+.orange-icon {
+    color: #ff8000 !important;
+    cursor: pointer;
+}
+.yellow-icon {
+    color: #ffff00 !important;
+    cursor: pointer;
+}
+.blue-icon {
+    color: #4d4dff !important;
+    cursor: pointer;
+}
+.black-icon {
+    color: #00001a !important;
+    cursor: pointer;
+}
+

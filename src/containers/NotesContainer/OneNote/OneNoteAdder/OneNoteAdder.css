@@ -1,0 +1,9 @@
+div textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    border-radius: 2px;
+    height: 60px;
+    size: auto;
+}
