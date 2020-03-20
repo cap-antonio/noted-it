@@ -28,6 +28,7 @@ class NotesContainer extends React.Component {
         </div>
 
         {/* Notes Container if they are */}
+        
         {this.props.notes.length === 0
           ? null
           : this.props.loading

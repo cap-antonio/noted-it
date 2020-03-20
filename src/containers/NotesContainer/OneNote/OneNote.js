@@ -4,14 +4,9 @@ import './OneNote.css'
 export const OneNote = ({ id, note, onDelete, editingModeFinish, color, putEditNote, setNewColor }) => {
     const [showColors, setShowColors] = useState("d-none card-text")
 
-    function onHideColors() {
-        setShowColors("")
-    }
-
-    const [colorPick, setColorPick] = useState({
+     const [colorPick, setColorPick] = useState({
         color: color
     })
-    console.log(colorPick.color)
     const [editedNote, setEditedNote] = useState({
         title: ""
     })
@@ -31,7 +26,6 @@ export const OneNote = ({ id, note, onDelete, editingModeFinish, color, putEditN
     }
 
     const submitHandler = (e) => {
-        console.log("work")
         e.preventDefault()
         const Data = {
             title: editedNote.title,
@@ -42,7 +36,6 @@ export const OneNote = ({ id, note, onDelete, editingModeFinish, color, putEditN
         }
         if (editedNote.title.length === "") {
             onDelete()
-            console.log("Should delete")
         } else {
             putEditNote(id, Data)
             editingModeFinish()
@@ -79,7 +72,6 @@ export const OneNote = ({ id, note, onDelete, editingModeFinish, color, putEditN
                     <i className="blue-icon fas fa-square f0c8" onClick={() => changeColor(id, "card text-white bg-info mb-3", note)} />
                     <i className="black-icon fas fa-square f0c8" onClick={() => changeColor(id, "card text-white bg-dark mb-3", note)} />
                     <i className="basic-icon far fa-square" onClick={() => changeColor(id, "card border-primary mb-3", note)} />
-                    
                 </div>
             </div>
 

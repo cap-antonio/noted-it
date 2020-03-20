@@ -1,4 +1,4 @@
-import { FETCHING_NOTES, FETCHING_OK, FETCHING_ERROR, ADD_NOTE, DELETE_NOTE, EDIT_MODE_START, EDIT_MODE_FINISH, EDIT_NOTE } from "./action-types"
+import { FETCHING_NOTES, FETCHING_OK, FETCHING_ERROR, ADD_NOTE, DELETE_NOTE, EDIT_MODE_START, EDIT_MODE_FINISH } from "./action-types"
 import axios from "axios"
 
 const _baseUrl = `https://notes-task-aa80d.firebaseio.com`
@@ -10,6 +10,9 @@ export function fetchNotes() {
             const notes = []
             await axios.get(`${_baseUrl}/notes.json`)
             .then(response => {
+                if(response.data === null) {
+                    dispatch(fetchNotesOk(notes))
+                }
                 for (let key in response.data) {
                     notes.unshift(
                     {

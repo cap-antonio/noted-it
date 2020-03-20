@@ -1,4 +1,4 @@
-import { FETCHING_NOTES, FETCHING_OK, FETCHING_ERROR, DELETE_NOTE, ADD_NOTE, EDIT_MODE_FINISH, EDIT_MODE_START, EDIT_NOTE } from "./actions/action-types"
+import { FETCHING_NOTES, FETCHING_OK, FETCHING_ERROR, DELETE_NOTE, ADD_NOTE, EDIT_MODE_FINISH, EDIT_MODE_START } from "./actions/action-types"
 
 const initialState = {
     notes: [],
