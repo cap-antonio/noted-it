@@ -4,7 +4,7 @@ import './OneNoteAdder.css'
 export const OneNoteAdder = ({ editingModeFinish, addNote}) => {
     const[textNote, setTextNote] = useState({
         title: ""
-    })
+        })
 
     const onTitleChange = (e) => {
         setTextNote({
@@ -15,7 +15,8 @@ export const OneNoteAdder = ({ editingModeFinish, addNote}) => {
     const submitHandler = (e) => {
         e.preventDefault()
         const Data = {
-            title: textNote.title
+            title: textNote.title,
+            color: "card border-primary mb-3"
         }
         if (textNote.title.trim().length === 0) {
             setTextNote({

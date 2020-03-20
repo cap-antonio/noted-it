@@ -1,4 +1,4 @@
-import { FETCHING_NOTES, FETCHING_OK, FETCHING_ERROR, ADD_NOTE, DELETE_NOTE, EDIT_MODE_START, EDIT_MODE_FINISH } from "./action-types"
+import { FETCHING_NOTES, FETCHING_OK, FETCHING_ERROR, ADD_NOTE, DELETE_NOTE, EDIT_MODE_START, EDIT_MODE_FINISH, EDIT_NOTE } from "./action-types"
 import axios from "axios"
 
 const _baseUrl = `https://notes-task-aa80d.firebaseio.com`
@@ -23,13 +23,6 @@ export function fetchNotes() {
             if (notes.length === 0) {
                 return 
             }
-
-            // response.data.map((note) => {
-            //     notes.push({
-            //         id: note.id,
-            //         title: note.title
-            //     })
-            // })
             dispatch(fetchNotesOk(notes))
         }
         catch (e) {
@@ -41,8 +34,7 @@ export function fetchNotes() {
 export function deleteNote(id) {
     return async dispatch => {
         try {
-            const res = await axios.delete(`${_baseUrl}/notes/${id}.json`)
-            console.log(res)
+            await axios.delete(`${_baseUrl}/notes/${id}.json`)
             dispatch(fetchNotes())
         }
         catch (e) {
@@ -51,13 +43,12 @@ export function deleteNote(id) {
     }
 }
 
-export function addNote(title) {
+export function addNote(data) {
     return async (dispatch) => {
-        console.log(title)
         try {
-            dispatch(noteAdding())
-            const res = await axios.post(`${_baseUrl}/notes.json`, title)
-            console.log(res)
+            // dispatch(noteAdding())
+            await axios.post(`${_baseUrl}/notes.json`, data)
+            console.log(data)
             dispatch(fetchNotes())
         }
         catch (e) {
@@ -66,10 +57,35 @@ export function addNote(title) {
     }
 }
 
-export function noteAdding(noteData) {
+export function putEditNote(id, Data) {
+    return async dispatch => {
+        try {
+            console.log(Data)
+            dispatch(fetchNotesStart())
+            await axios.put(`${_baseUrl}/notes/${id}.json`, Data)
+            dispatch(fetchNotes())
+        } catch (e) {
+            dispatch(fetchNotesError(e))
+        }
+    }
+}
+
+export function setNewColor(id, newData) {
+    return async dispatch => {
+        try {
+            console.log(id, newData)
+            dispatch(fetchNotesStart())
+            await axios.put(`${_baseUrl}/notes/${id}.json`, newData)
+            dispatch(fetchNotes())
+        } catch (e) {
+            dispatch(fetchNotesError(e))
+        }
+    }
+}
+
+export function noteAdding() {
     return {
-        type: ADD_NOTE,
-        noteData
+        type: ADD_NOTE
     }
 }
 

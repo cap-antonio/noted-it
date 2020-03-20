@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchNotes, deleteNote, addNote, editingModeStart, editingModeFinish } from '../../redux/actions/action-creators'
+import { fetchNotes, deleteNote, addNote, editingModeStart, editingModeFinish, putEditNote, setNewColor } from '../../redux/actions/action-creators'
 import Loader from './../../components/Loader/Loader'
 import { OneNote } from './OneNote/OneNote'
 import style from './NotesContainer.module.css'
@@ -34,7 +34,9 @@ class NotesContainer extends React.Component {
             ? <Loader />
             : this.props.notes.map((note) => (
               <div className="col-sm-3 mb-3" key={Math.random()}>
-                <OneNote key={note.id} id={note.id} title={note.title} onDelete={this.props.deleteNote} />
+                <OneNote key={note.id} id={note.id} note={note.title} color = {note.color} onDelete={this.props.deleteNote} 
+                  editingModeFinish = {this.props.editingModeFinish} addNote = {this.props.addNote}
+                  putEditNote = {this.props.putEditNote} setNewColor = {this.props.setNewColor}/>
               </div>
             ))}
       </div>
@@ -54,9 +56,11 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchNotes: () => dispatch(fetchNotes()),
     deleteNote: (id) => dispatch(deleteNote(id)),
-    addNote: (title) => dispatch(addNote(title)),
+    addNote: (data) => dispatch(addNote(data)),
     editingModeStart: () => dispatch(editingModeStart()),
-    editingModeFinish: () => dispatch(editingModeFinish())
+    editingModeFinish: () => dispatch(editingModeFinish()),
+    putEditNote: (id, Data) => dispatch(putEditNote(id, Data)),
+    setNewColor: (id, newData) => dispatch(setNewColor(id, newData))
   }
 }
 

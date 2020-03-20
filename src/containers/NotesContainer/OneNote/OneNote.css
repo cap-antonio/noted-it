@@ -1,3 +1,27 @@
+textarea:disabled {
+    opacity: 1;
+    background-color: transparent;
+    color: inherit;
+    border-style: none;
+    cursor: pointer;
+}
+textarea {
+    opacity: 1;
+    background-color: transparent;
+    color: inherit;
+    border-style: none;
+}
+.card-text i {
+    padding: 2px;
+    padding-bottom: 7px;
+}
+.arrow {
+    padding: 4px;
+    cursor: pointer;
+}
+.card-text i {
+    cursor: pointer;
+}
 .card-body {
     background-color: white;
     text-align: center;
