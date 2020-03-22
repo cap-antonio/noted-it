@@ -7,7 +7,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/noted-it/">
       <Header />
       <Route component = {NotesContainer} exact path = "/"/>
       <Route component = {About} path = "/about" />
