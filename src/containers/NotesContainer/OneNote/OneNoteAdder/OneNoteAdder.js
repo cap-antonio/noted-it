@@ -44,7 +44,9 @@ export const OneNoteAdder = ({ editingModeFinish, addNote}) => {
                 </div>
                 <button type="button" className="btn btn-primary btn-sm float-right" 
                     onClick = {submitHandler}>
-                    <i className="fas fa-check-circle" />
+                        {textNote.title.trim().length === 0 
+                            ? <i className ="fas fa-times-circle" /> 
+                            : <i className="fas fa-check-circle" />}
                 </button>
             </div>
         </form>

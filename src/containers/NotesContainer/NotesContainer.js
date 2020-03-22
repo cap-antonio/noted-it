@@ -5,6 +5,13 @@ import Loader from './../../components/Loader/Loader'
 import { OneNote } from './OneNote/OneNote'
 import style from './NotesContainer.module.css'
 import { OneNoteAdder } from './OneNote/OneNoteAdder/OneNoteAdder'
+import styled from 'styled-components'
+
+const Main = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+`
 
 class NotesContainer extends React.Component {
   componentDidMount = async () => {
@@ -17,7 +24,7 @@ class NotesContainer extends React.Component {
   )
   render() {
     return (
-      <div className={style.notescontainer}>
+      <Main>
 
         {/* Add button */}
         <div className="col-sm-3 mb-3">
@@ -40,7 +47,7 @@ class NotesContainer extends React.Component {
                   putEditNote = {this.props.putEditNote} setNewColor = {this.props.setNewColor}/>
               </div>
             ))}
-      </div>
+      </Main>
     )
   }
 }

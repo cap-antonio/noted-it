@@ -51,7 +51,6 @@ export function addNote(data) {
         try {
             // dispatch(noteAdding())
             await axios.post(`${_baseUrl}/notes.json`, data)
-            console.log(data)
             dispatch(fetchNotes())
         }
         catch (e) {
@@ -63,7 +62,6 @@ export function addNote(data) {
 export function putEditNote(id, Data) {
     return async dispatch => {
         try {
-            console.log(Data)
             dispatch(fetchNotesStart())
             await axios.put(`${_baseUrl}/notes/${id}.json`, Data)
             dispatch(fetchNotes())
