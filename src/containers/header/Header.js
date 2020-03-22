@@ -1,17 +1,34 @@
 import React from 'react'
 import './header.css'
+import counterpart from 'counterpart';
+import Translate from 'react-translate-component'
+import en from './../../lang/en'
+import ru from './../../lang/ru'
+
+counterpart.registerTranslations('en', en)
+counterpart.registerTranslations('ru', ru)
+
+counterpart.setLocale('en')
 
 const Header = () => {
+    const onLangChange = (lang) => {
+        counterpart.setLocale(lang)
+    }
     return (
         <nav className="navbar navbar-dark bg-primary">
-            <a className="navbar-brand" href="#">Noted it?</a>
-            <ul className="navbar-nav mr-auto p-2">
-                <li className="nav-item">
-                    <a className="nav-link" href="#">About</a>
-                </li>
-            </ul>
-                <button className=" btn btn-primary my-2 my-sm-0" type="submit">EN</button>
-                <button className=" btn btn-primary my-2 my-sm-0" type="submit">RU</button>
+            <Translate content = 'title' component = 'a' className = 'navbar-brand' href = '#'/>
+            <ul className="navbar-nav mr-auto p-2" />
+                <button className="btn btn-primary my-2 my-sm-0" 
+                    type="submit"
+                    onClick = {() => onLangChange('en')}>
+                        EN
+                </button>
+                <button className="btn btn-primary my-2 my-sm-0" 
+                    type="submit"
+                    value = 'ru'
+                    onClick = {() => onLangChange('ru')}>
+                        RU
+                </button>
         </nav>
     )
 }

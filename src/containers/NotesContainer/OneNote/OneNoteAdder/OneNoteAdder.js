@@ -1,5 +1,12 @@
 import React, { useState } from 'react'
 import './OneNoteAdder.css'
+import counterpart from 'counterpart';
+import Translate from 'react-translate-component'
+import en from './../../../../lang/en'
+import ru from './../../../../lang/ru'
+
+counterpart.registerTranslations('en', en)
+counterpart.registerTranslations('ru', ru)
 
 export const OneNoteAdder = ({ editingModeFinish, addNote}) => {
     const[textNote, setTextNote] = useState({
@@ -36,9 +43,14 @@ export const OneNoteAdder = ({ editingModeFinish, addNote}) => {
         <form className="card border-primary mb-3" onSubmit = {submitHandler}>
             <div className="card-body">
                 <div className="card-text">
-                    <textarea placeholder = "Note it!" 
+                    {/* <textarea placeholder = "Note it!" 
                         type = "text"
                         autoFocus = {true} 
+                        onChange = {onTitleChange} 
+                        value = {textNote.title} /> */}
+                    <Translate component = 'textarea' 
+                        type = 'text' 
+                        attributes = {{placeholder: 'placeholder'}} 
                         onChange = {onTitleChange} 
                         value = {textNote.title} />
                 </div>

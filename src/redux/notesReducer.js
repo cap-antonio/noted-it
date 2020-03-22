@@ -5,9 +5,10 @@ const initialState = {
     loading: false,
     error: null,
     editMode: false,
-    newNote: []
+    newNote: [],
 }
 export default function NotesReducer(state = initialState, action) {
+
     switch (action.type) {
         case FETCHING_NOTES:
             return {
@@ -52,3 +53,4 @@ export default function NotesReducer(state = initialState, action) {
             return state
     }
 }
+
