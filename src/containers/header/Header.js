@@ -4,6 +4,7 @@ import counterpart from 'counterpart';
 import Translate from 'react-translate-component'
 import en from './../../lang/en'
 import ru from './../../lang/ru'
+import { NavLink } from 'react-router-dom';
 
 counterpart.registerTranslations('en', en)
 counterpart.registerTranslations('ru', ru)
@@ -16,10 +17,10 @@ const Header = () => {
     }
     return (
         <nav className="navbar navbar-dark bg-primary">
-            <Translate content='title' component='a' className='navbar-brand' href='/home' />
+            <Translate content='title' component={NavLink} className='navbar-brand' to='/home' />
             <ul className="navbar-nav mr-auto p-2">
                 <li className ="nav-item">
-                    <Translate content='aboutPage' component='a' className='nav-link' href='/about' active />
+                    <Translate content='aboutPage' component={NavLink} className='nav-link' to='/about' />
                 </li>
             </ul>
             <button className="btn btn-primary my-2 my-sm-0"

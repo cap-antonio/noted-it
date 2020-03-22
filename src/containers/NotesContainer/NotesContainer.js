@@ -13,7 +13,7 @@ const Main = styled.div`
 `
 
 class NotesContainer extends React.Component {
-  componentDidMount = async () => {
+  componentDidMount = () => {
     this.props.fetchNotes()
   }
   adder = (
@@ -22,6 +22,7 @@ class NotesContainer extends React.Component {
     </button>
   )
   render() {
+    console.log(this.props.notes)
     return (
       <Main>
         {/* Add button */}
