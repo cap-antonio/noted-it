@@ -1,0 +1,11 @@
+.body-about {
+    display: flex;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+#color-icon i {
+    padding: 2px;
+}
+#card-note {
+    max-width: 20rem;
+}

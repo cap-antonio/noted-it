@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './OneNote.css'
+import TextareaAutosize from 'react-autosize-textarea';
 
 export const OneNote = ({ id, note, onDelete, editingModeFinish, color, putEditNote, setNewColor }) => {
     const [showColors, setShowColors] = useState("d-none card-text")
@@ -46,24 +47,24 @@ export const OneNote = ({ id, note, onDelete, editingModeFinish, color, putEditN
     }, [])
 
     return (
-        <div className={color} >
+        <div id = "card-note" className={color}>
             <div className="card-header">
-                <textarea className="card-text"
+                <TextareaAutosize className="card-text"
                     onChange={onNoteChange}
                     defaultValue={note}
                     onBlur={submitHandler}>
-                </textarea>
-                <button className="btn btn-primary disabled btn-sm float-right" onClick={() => onDelete(id)}>
-                        <i className="fas fa-trash-alt" />
-                </button>
+                </TextareaAutosize>
+                
 
             </div>
             <div>
                 {showColors === "d-none card-text"
-                    ? <i className="arrow fas fa-chevron-circle-down" onClick={() => setShowColors("d-flex justify-content-center card-text")} />
+                    // ? <i className="arrow fas fa-chevron-circle-down" onClick={() => setShowColors("d-flex justify-content-center card-text")} />
+                    ? <i className="arrow fas fa-chevron-circle-down" onClick={() => setShowColors("d-flex justify-content-center align-items-center")} />
                     : <i className="arrow fas fa-chevron-circle-up" onClick={() => setShowColors("d-none card-text")} />}
 
                 <div className= {showColors} >
+                    <div id = "color-icon" className = "p-2 bd-highlight">
                     <i className="green-icon fas fa-square f0c8" onClick={() => changeColor(id, "card text-white bg-success mb-3", note)} />
                     <i className="red-icon fas fa-square f0c8" onClick={() => changeColor(id, "card text-white bg-primary mb-3", note)} />
                     <i className="grey-icon fas fa-square f0c8" onClick={() => changeColor(id, "card text-white bg-secondary mb-3", note)} />
@@ -72,7 +73,12 @@ export const OneNote = ({ id, note, onDelete, editingModeFinish, color, putEditN
                     <i className="blue-icon fas fa-square f0c8" onClick={() => changeColor(id, "card text-white bg-info mb-3", note)} />
                     <i className="black-icon fas fa-square f0c8" onClick={() => changeColor(id, "card text-white bg-dark mb-3", note)} />
                     <i className="basic-icon far fa-square" onClick={() => changeColor(id, "card border-primary mb-3", note)} />
+                    </div>
+                    <button id = "trash" className="btn btn-primary btn-sm" onClick={() => onDelete(id)}>
+                        <i className="fas fa-trash-alt" />
+                    </button>
                 </div>
+                
             </div>
 
         </div>

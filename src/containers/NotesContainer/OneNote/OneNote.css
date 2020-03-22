@@ -11,6 +11,12 @@ textarea {
     color: inherit;
     border-style: none;
 }
+#color-icon i {
+    padding: 2px;
+}
+#card-note {
+    max-width: 20rem;
+}
 .card-text i {
     padding: 2px;
     padding-bottom: 7px;

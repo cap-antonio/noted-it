@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { fetchNotes, deleteNote, addNote, editingModeStart, editingModeFinish, putEditNote, setNewColor } from '../../redux/actions/action-creators'
 import Loader from './../../components/Loader/Loader'
 import { OneNote } from './OneNote/OneNote'
-import style from './NotesContainer.module.css'
 import { OneNoteAdder } from './OneNote/OneNoteAdder/OneNoteAdder'
 import styled from 'styled-components'
 
@@ -25,7 +24,6 @@ class NotesContainer extends React.Component {
   render() {
     return (
       <Main>
-
         {/* Add button */}
         <div className="col-sm-3 mb-3">
           {this.props.editMode

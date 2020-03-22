@@ -4,6 +4,8 @@ import counterpart from 'counterpart';
 import Translate from 'react-translate-component'
 import en from './../../../../lang/en'
 import ru from './../../../../lang/ru'
+import TextareaAutosize from 'react-autosize-textarea';
+
 
 counterpart.registerTranslations('en', en)
 counterpart.registerTranslations('ru', ru)
@@ -48,7 +50,7 @@ export const OneNoteAdder = ({ editingModeFinish, addNote}) => {
                         autoFocus = {true} 
                         onChange = {onTitleChange} 
                         value = {textNote.title} /> */}
-                    <Translate component = 'textarea' 
+                    <Translate component = {TextareaAutosize} 
                         type = 'text' 
                         attributes = {{placeholder: 'placeholder'}} 
                         onChange = {onTitleChange} 
