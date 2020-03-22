@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "432eae832b37ce16624467fe5a4f0fb8",
+    "revision": "322f65f0938f4118329273e539e8a144",
     "url": "/noted-it/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/noted-it/static/css/2.a34aa59c.chunk.css"
   },
   {
-    "revision": "b717a357efd3b482fa75",
+    "revision": "43a590d5cafadb236d9e",
     "url": "/noted-it/static/css/main.ad2c7076.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/noted-it/static/js/2.457d640a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b717a357efd3b482fa75",
-    "url": "/noted-it/static/js/main.810b960c.chunk.js"
+    "revision": "43a590d5cafadb236d9e",
+    "url": "/noted-it/static/js/main.195f85fd.chunk.js"
   },
   {
     "revision": "b1ff2281da6c2bc46740",

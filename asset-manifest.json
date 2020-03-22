@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/noted-it/static/css/main.ad2c7076.chunk.css",
-    "main.js": "/noted-it/static/js/main.810b960c.chunk.js",
-    "main.js.map": "/noted-it/static/js/main.810b960c.chunk.js.map",
+    "main.js": "/noted-it/static/js/main.195f85fd.chunk.js",
+    "main.js.map": "/noted-it/static/js/main.195f85fd.chunk.js.map",
     "runtime-main.js": "/noted-it/static/js/runtime-main.131ee5e5.js",
     "runtime-main.js.map": "/noted-it/static/js/runtime-main.131ee5e5.js.map",
     "static/css/2.a34aa59c.chunk.css": "/noted-it/static/css/2.a34aa59c.chunk.css",
     "static/js/2.457d640a.chunk.js": "/noted-it/static/js/2.457d640a.chunk.js",
     "static/js/2.457d640a.chunk.js.map": "/noted-it/static/js/2.457d640a.chunk.js.map",
     "index.html": "/noted-it/index.html",
-    "precache-manifest.0d6d76c7654e6d8fbf28cf17e7b25d82.js": "/noted-it/precache-manifest.0d6d76c7654e6d8fbf28cf17e7b25d82.js",
+    "precache-manifest.274ccc1f2ef9f95d8b5d6a5c7d55ab19.js": "/noted-it/precache-manifest.274ccc1f2ef9f95d8b5d6a5c7d55ab19.js",
     "service-worker.js": "/noted-it/service-worker.js",
     "static/css/2.a34aa59c.chunk.css.map": "/noted-it/static/css/2.a34aa59c.chunk.css.map",
     "static/css/main.ad2c7076.chunk.css.map": "/noted-it/static/css/main.ad2c7076.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.a34aa59c.chunk.css",
     "static/js/2.457d640a.chunk.js",
     "static/css/main.ad2c7076.chunk.css",
-    "static/js/main.810b960c.chunk.js"
+    "static/js/main.195f85fd.chunk.js"
   ]
 }
