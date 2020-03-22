@@ -9,7 +9,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Route component = {NotesContainer} path = "/home"/>
+      <Route component = {NotesContainer} exact path = "/"/>
       <Route component = {About} path = "/about" />
     </BrowserRouter>
   );

@@ -17,7 +17,7 @@ const Header = () => {
     }
     return (
         <nav className="navbar navbar-dark bg-primary">
-            <Translate content='title' component={NavLink} className='navbar-brand' to='/home' />
+            <Translate content='title' component={NavLink} className='navbar-brand' exact to='/' />
             <ul className="navbar-nav mr-auto p-2">
                 <li className ="nav-item">
                     <Translate content='aboutPage' component={NavLink} className='nav-link' to='/about' />
