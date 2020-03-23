@@ -7,7 +7,11 @@ import NotesContainer from './NotesContainer'
 it(`Notes should be fetched`, () => {
 
     // 1. Test note adding
-    let action = addNote("TestTest")
+    const Data = {
+        title: "Test Note",
+        color: "card border-primary mb-3"
+    }
+    let action = addNote(Data)
     let state = {
         notes: []
     }

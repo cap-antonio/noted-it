@@ -85,18 +85,23 @@ export function setNewColor(id, newData) {
 }
 
 export function noteAdding() {
+    console.log(ADD_NOTE)
     return {
         type: ADD_NOTE
     }
 }
 
 export function editingModeStart() {
+    console.log(EDIT_MODE_START)
+
     return {
         type: EDIT_MODE_START
     }
 }
 
 export function editingModeFinish() {
+    console.log(EDIT_MODE_FINISH)
+
     return {
         type: EDIT_MODE_FINISH
     }
@@ -109,12 +114,16 @@ export function noteDeleting() {
 }
 
 export function fetchNotesStart() {
+    console.log(FETCHING_NOTES)
+
     return {
         type: FETCHING_NOTES
     }
 }
 
 export function fetchNotesOk(notes) {
+    console.log(FETCHING_OK)
+
     return {
         type: FETCHING_OK,
         notes
@@ -122,6 +131,8 @@ export function fetchNotesOk(notes) {
 }
 
 export function fetchNotesError(error) {
+    console.log(FETCHING_ERROR)
+
     return {
         type: FETCHING_ERROR,
         error

@@ -2,7 +2,7 @@ import { FETCHING_NOTES, FETCHING_OK, FETCHING_ERROR, DELETE_NOTE, ADD_NOTE, EDI
 
 const initialState = {
     notes: [],
-    loading: false,
+    loading: true,
     error: null,
     editMode: false,
     newNote: [],
@@ -11,31 +11,26 @@ export default function NotesReducer(state = initialState, action) {
 
     switch (action.type) {
         case FETCHING_NOTES:
-            console.log(FETCHING_NOTES)
             return {
                 ...state,
                 loading: true
             }
         case FETCHING_OK:
-            console.log(FETCHING_OK)
             return {
                 ...state,
                 loading: false,
                 notes: action.notes
             }
         case FETCHING_ERROR:
-            console.log(FETCHING_ERROR)
             return {
                 loading: false,
                 error: action.error
             }
         case DELETE_NOTE:
-            console.log(DELETE_NOTE)
             return {
                 loading: false
             }
         case ADD_NOTE:
-            console.log(ADD_NOTE)
             return {
                 ...state,
                 newNote: {
@@ -46,13 +41,11 @@ export default function NotesReducer(state = initialState, action) {
             }
 
         case EDIT_MODE_START:
-            console.log(EDIT_MODE_START)
             return {
                 ...state,
                 editMode: true
             }
         case EDIT_MODE_FINISH:
-            console.log(EDIT_MODE_FINISH)
             return {
                 ...state,
                 editMode: false
